@@ -1,7 +1,14 @@
 <template>
+  <div>
+    <FontAwesomeIcon>
+      <font-awesome-icon></font-awesome-icon>
+    </FontAwesomeIcon>
   <nav class="navbar navbar-light fixed-top">
     <div class="navbar-text ml-auto d-flex">
-      <button class="btn btn-sm btn-outline-success" @click="$emit('toggle')">
+      <button
+        class="btn btn-sm btn-outline-success"
+        @click="$parent.$emit('toggle')"
+      >
         <i class="fas fa-dollar-sign"></i>
         <font-awesome-icon icon="dollar-sign"></font-awesome-icon>
       </button>
@@ -32,16 +39,18 @@
               ></b>
               <a
                 href="#"
-                @click.stop="$emit('delete', index)"
+                @click.stop="$parent.$emit('delete', index)"
                 class="badge badge-danger text-white"
                 >-</a
               >
             </div>
           </div>
+          <router-link class="btn btn-sm btn-outline-info text-dark float-right mr-4" to="/Checkout">Pay now!</router-link>
         </div>
       </div>
     </div>
   </nav>
+  </div>
 </template>
 
 <script>
